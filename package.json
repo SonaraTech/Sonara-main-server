@@ -1,0 +1,12 @@
+{
+  "name": "sonara-main-server",
+  "author": "Sigmentium Sonara",
+  "version": "1.0.0",
+  "main": "Main.js",
+  "scripts": {
+    "start": "node Main.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1"
+  }
+}
