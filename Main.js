@@ -28,18 +28,22 @@ const server = http.createServer((req, res) => {
         req.on('end', () => {
             const Email = body;
 
-            fetch('https://sigmail-gic3.onrender.com/api/codeConfirm', {
-                method:'POST',
-                headers: {
-                    'Content-Type':'application/json'
-                },
-                body: JSON.stringify({
-                    to: Email,
-                    senter: 'Sonara'
+            fetch('https://sigmail-gic3.onrender.com');
+
+            setTimeout(() => {
+                fetch('https://sigmail-gic3.onrender.com/api/codeConfirm', {
+                    method:'POST',
+                    headers: {
+                        'Content-Type':'application/json'
+                    },
+                    body: JSON.stringify({
+                        to: Email,
+                        senter: 'Sonara'
+                    })
                 })
-            })
-                .then(response => response.text())
-                .then(data => Sessions.set(Email, data));
+                    .then(response => response.text())
+                    .then(data => Sessions.set(Email, data));
+            }, 5000);
 
             res.writeHead(200);
             res.end();
